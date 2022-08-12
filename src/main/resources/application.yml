@@ -1,0 +1,29 @@
+server:
+  port: 8080
+magic-api:
+  web: /magic
+  resource:
+    location: magic-api
+  support-cross-domain: true
+  swagger:
+    version: 1.0
+    description: MagicAPI 接口信息
+    title: MagicAPI Swagger Docs
+    name: MagicAPI 接口
+    location: /v2/api-docs/magic-api/swagger2.json
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 创建一个空的magic_api数据库即可
+    url: jdbc:mysql://localhost:3306/magic_api?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  redis:
+    host: localhost
+    port: 6379
+    database: 10
+#    password: 123456
